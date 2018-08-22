@@ -37,9 +37,9 @@ do
 		cmd=`echo $cmd_expr | cut -d":" -f1`
 		file_name="${node}.${cmd}"
 		
-		echo "@CONNECT($node)" > $file_name
-		echo "$cmd_expr" >> $file_name
-		echo "@DISCONNECT" >> $file_name
+		echo "@CONNECT($node)" > $scripts_dir/$file_name
+		echo "$cmd_expr" >> $scripts_dir/$file_name
+		echo "@DISCONNECT" >> $scripts_dir/$file_name
 		
 	done
 
