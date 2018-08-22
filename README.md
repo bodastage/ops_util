@@ -11,7 +11,7 @@ where: \
 	&nbsp;&nbsp;&nbsp;&nbsp;**output_folder** is the folder to create the printouts
 	
 Example:
-	```sh
+	```
 	run_eaw.sh -n nodes.txt -c cmds.txt -o ./logs
 	```
 	
