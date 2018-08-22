@@ -36,8 +36,9 @@ for node in `cat $node_list`
 do
 	for cmd_expr in `cat $cmd_list`
 	do
-		cmd=`echo $cmd_expr | cut -d":" -f1`
-		file_name="${node}.${cmd}"
+		label=`echo $cmd_expr | cut -d"|" -f1`
+		cmd=`echo $cmd_expr | cut -d"|" -f2`
+		file_name="${node}.${label}"
 		
 		echo "@CONNECT(\"$node\")" > $scripts_dir/$file_name
 		echo "$cmd_expr" >> $scripts_dir/$file_name

@@ -7,7 +7,7 @@ run_eaw.sh -n <nodes_list_file> -c <cmd_list_file> -o <output_folder>
 
 where: \
 	&nbsp;&nbsp;&nbsp;&nbsp;**nodes_list_file** is a list of nodes on which to run the commands \
-	&nbsp;&nbsp;&nbsp;&nbsp;**cmd_list_file** contains a list of commands to run on the nodes \
+	&nbsp;&nbsp;&nbsp;&nbsp;**cmd_list_file** contains a list of commands to run on the nodes in the format **LABEL|MML** \
 	&nbsp;&nbsp;&nbsp;&nbsp;**output_folder** is the folder to create the printouts
 	
 Example:
@@ -32,7 +32,7 @@ Installation
 3. Update the nodes in nodes.txt and the commands in cmds.txt. 
 	```sh
 	echo "NODENAME" >> nodes.txt 
-	echo "RLDEP:ALL;" >> cmd.txt 
+	echo "RLDEP|RLDEP:ALL;" >> cmd.txt
 	```
 4. Make the run_eaw.sh script executable 
 	```sh
