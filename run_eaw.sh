@@ -14,10 +14,10 @@ file_dir=`pwd`
 node_list="nodes.txt"
 cmd_list="cmd.txt"
 scripts_dir="$file_dir/scripts"
-output_dir="logs"
+output_dir="$file_dir/logs"
 
 # Make sure scripts directory exists 
-[ -d $scripts_dir ] || mkdir -p $script_dir
+[ -d $scripts_dir ] || mkdir -p $scripts_dir
 
 while :
 do
@@ -49,7 +49,7 @@ do
 done
 
 # Run ops scripts
-for script_file in `ls -1 $script_dir`
+for script_file in `ls -1 $scripts_dir`
 do
-	ops_nui -file "${script_file}" > $output_dir/${script_file}
+	ops_nui -file "$scripts_dir/${script_file}" > $output_dir/${script_file}
 done 
