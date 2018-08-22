@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -xv
 
 # Runs provided AXE commands on provided nodes
 #
@@ -9,7 +9,8 @@ usage() {
 	exit 1
 }
 
-file_dir=`dirname $(realpath $0)`
+file_dir=`pwd`
+
 node_list="nodes.txt"
 cmd_list="cmd.txt"
 scripts_dir="$file_dir/scripts"
