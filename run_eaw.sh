@@ -8,10 +8,11 @@ usage() {
 	echo usage: `basename $0` '-n node_list_file -c cmd_list_file -o output_directory ' 1>&2
 	exit 1
 }
-+
+
+file_dir=`dirname $(realpath $0)`
 node_list="nodes.txt"
 cmd_list="cmd.txt"
-scripts_dir="scripts"
+scripts_dir="$file_dir/scripts"
 output_dir="logs"
 
 # Make sure scripts directory exists 
@@ -37,7 +38,7 @@ do
 		cmd=`echo $cmd_expr | cut -d":" -f1`
 		file_name="${node}.${cmd}"
 		
-		echo "@CONNECT($node)" > $scripts_dir/$file_name
+		echo "@CONNECT(\"$node\")" > $scripts_dir/$file_name
 		echo "$cmd_expr" >> $scripts_dir/$file_name
 		echo "@DISCONNECT" >> $scripts_dir/$file_name
 		
@@ -48,5 +49,5 @@ done
 # Run ops scripts
 for script_file in `ls -1 $script_dir`
 do
-	ops_nui -f ${script_file} > $output_dir/${script_file}
+	ops_nui -file "${script_file}" > $output_dir/${script_file}
 done 
