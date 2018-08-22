@@ -20,14 +20,14 @@ Installation
 	scp -r ops_util username@oss_ip:~/
 2. SSH into your OSS account.
 	ssh username@oss_ip
-2. Change directory to the ops_util folder 
+3. Change directory to the ops_util folder 
     cd ~/ops_util 
-3. Update the nodes in nodes.txt and the commands in cmds.txt.
+4. Update the nodes in nodes.txt and the commands in cmds.txt.
 	echo "BSCAFLA" >> nodes.txt 
 	echo "RXTCP:MOTY=RXOTG;" >> cmd.txt 
-4. Make the run_eaw.sh script executable 
+5. Make the run_eaw.sh script executable 
 	chmod +x ./run_eaw.sh
-5. Run the run_eaw.sh script and wait for it to complete.
+6. Run the run_eaw.sh script and wait for it to complete.
    ./run_eaw.sh -n nodes.txt -c cmds.txt -o ./logs
-6. Copy generated printout files from the logs folder to your laptop/PC.
+7. Copy generated printout files from the logs folder to your laptop/PC.
 	scp -r username@oss_ip:~/ops_util/logs . 

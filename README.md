@@ -34,11 +34,15 @@ Installation
 	echo "NODENAME" >> nodes.txt 
 	echo "RLDEP:ALL;" >> cmd.txt 
 	```
-4. Run the run_eaw.sh script and wait for it to complete.
+4. Make the run_eaw.sh script executable 
+	```sh
+	chmod +x ./run_eaw.sh
+	```
+5. Run the run_eaw.sh script and wait for it to complete.
 	```sh
    	./run_eaw.sh -n nodes.txt -c cmds.txt -o ./logs
 	```
-5. Copy generated printout files from the logs folder to your laptop/PC.
+6. Copy generated printout files from the logs folder to your laptop/PC.
 	```sh
 	scp -r username@oss_ip:~/ops_util/logs . 
 	```
