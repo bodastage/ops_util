@@ -1,14 +1,15 @@
-# ops_util/run_eaw.sh
-Runs a list of Ericsson AXE MML commands on a list of nodes via ops_nui
+Introduction
+======================
+This utility  takes a list of Ericsson nodes and MML commands and runs them via ops_nui.
 
 Usage
 ======================
 run_eaw.sh -n <nodes_list_file> -c <cmd_list_file> -o <output_folder>
 
-where: \
-	&nbsp;&nbsp;&nbsp;&nbsp;**nodes_list_file** is a list of nodes on which to run the commands \
-	&nbsp;&nbsp;&nbsp;&nbsp;**cmd_list_file** contains a list of commands to run on the nodes \
-	&nbsp;&nbsp;&nbsp;&nbsp;**output_folder** is the folder to create the printouts
+where:
+	nodes_list_file is a list of nodes on which to run the commands 
+	cmd_list_file contains a list of commands to run on the nodes
+	output_folder is the folder to create the printouts
 	
 Example: 
 	run_eaw.sh -n nodes.txt -c cmds.txt -o ./logs
@@ -22,8 +23,8 @@ Installation
 2. Change directory to the ops_util folder 
     cd ~/ops_util 
 3. Update the nodes in nodes.txt and the commands in cmds.txt.
-	echo "NODENAME" >> nodes.txt 
-	echo "RLDEP:ALL;" >> cmd.txt 
+	echo "BSCAFLA" >> nodes.txt 
+	echo "RXTCP:MOTY=RXOTG;" >> cmd.txt 
 4. Run the run_eaw.sh script and wait for it to complete.
    ./run_eaw.sh -n nodes.txt -c cmds.txt -o ./logs
 5. Copy generated printout files from the logs folder to your laptop/PC.
